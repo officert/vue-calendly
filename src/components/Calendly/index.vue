@@ -7,7 +7,7 @@
 import calendly from '../../calendlyWidget';
 
 export default {
-  name: 'calendly',
+  name: 'vue-calendly',
   props: {
     url: {
       type: String,
@@ -15,7 +15,7 @@ export default {
     },
     height: {
       type: Number,
-      default: 1000
+      default: 600
     }
   },
   components: {},

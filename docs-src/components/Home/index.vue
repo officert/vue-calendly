@@ -35,10 +35,6 @@ export default {
                 top: 26px;
             }
         }
-
-        .demo-btn {
-            margin-top: 40px;
-        }
     }
 
     .main-content {

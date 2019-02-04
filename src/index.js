@@ -8,14 +8,14 @@ if (typeof window !== 'undefined' && window.Vue) {
 
   window.Vue.use({
     install(NewVue) {
-      NewVue.component('calendly', VueCalendly);
+      NewVue.component('vue-calendly', VueCalendly);
     }
   });
 }
 
 export default {
   install: function(NewVue) {
-    NewVue.component('calendly', VueCalendly);
+    NewVue.component('vue-calendly', VueCalendly);
   },
   VueCalendly
 };

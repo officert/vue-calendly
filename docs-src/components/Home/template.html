@@ -16,6 +16,30 @@
     </div>
   </section>
   <section class="main-content">
-    <calendly url="https://calendly.com/tablelist-pro" :height="600"></calendly>
+    <h2 style="margin-top: 2rem">Installation</h2>
+    <div class="highlight">
+      <pre class="highlight">npm install vue-calendly --save-dev</pre>
+    </div>
+    <p>
+      1) Download from NPM
+    </p>
+    <h2>Usage</h2>
+    <p>
+      1) Install the Vue Calendly Component:
+    </p>
+    <div class="highlight">
+      <pre class="highlight">import Vue from 'vue';
+import VueCalendly from 'vue-calendly';
+
+Vue.use(VueCalendly);</pre>
+    </div>
+    <p>
+      2) Use the Vue Component in your own component:
+    </p>
+    <div class="highlight">
+      <pre class="highlight">&lt;vue-calendly url="your Calendly URL" :height="600"&gt;&lt;/vue-calendly&gt;</pre>
+    </div>
+    <h2>Example</h2>
+    <vue-calendly url="https://calendly.com/vue-calendly" :height="600"></vue-calendly>
   </section>
 </div>
