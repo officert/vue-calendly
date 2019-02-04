@@ -4,6 +4,8 @@
 <style lang="less" src="./styles.less"></style>
 
 <script>
+import calendly from '../../calendlyWidget';
+
 export default {
   name: 'calendly',
   components: {},
@@ -11,6 +13,9 @@ export default {
     return {};
   },
   computed: {},
-  methods: {}
+  methods: {},
+  mounted() {
+    calendly.widget(this.$refs.calendarWrapper);
+  }
 };
 </script>

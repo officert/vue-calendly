@@ -13,6 +13,12 @@ if (typeof window !== 'undefined' && window.Vue) {
   });
 }
 
+// const firstScript = document.getElementsByTagName('script')[0];
+// const script = document.createElement('script');
+// script.src = 'https://assets.calendly.com/assets/external/widget.js';
+//
+// firstScript.parentNode.insertBefore(script, firstScript);
+
 export default {
   install: function(NewVue) {
     NewVue.component('calendly', VueCalendly);
