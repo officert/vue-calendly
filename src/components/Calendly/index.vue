@@ -8,6 +8,16 @@ import calendly from '../../calendlyWidget';
 
 export default {
   name: 'calendly',
+  props: {
+    url: {
+      type: String,
+      required: true
+    },
+    height: {
+      type: Number,
+      default: 1000
+    }
+  },
   components: {},
   data() {
     return {};
@@ -15,7 +25,7 @@ export default {
   computed: {},
   methods: {},
   mounted() {
-    calendly.widget(this.$refs.calendarWrapper);
+    calendly.widget(this.$el);
   }
 };
 </script>

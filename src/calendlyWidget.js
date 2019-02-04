@@ -1,4 +1,9 @@
 /* eslint-disable */
+/*
+code is extracted from Calendly's embed script : https://assets.calendly.com/assets/external/widget.js
+only the createInlineWidgets() function is taken and modified to work on a passed in DOM node, rather than looking for
+a CSS class in the DOM
+*/
 class Calendly {
   constructor(el) {
     this.el = el;
