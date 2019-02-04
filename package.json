@@ -1,0 +1,94 @@
+{
+  "name": "vue-calendly",
+  "version": "0.0.1",
+  "description": "Lib for using Calendly widget with Vue JS",
+  "main": "dist/vue-calendly.js",
+  "scripts": {
+    "dev": "NODE_ENV=development webpack-dev-server --mode development --config ./build/webpack.dev.js --open --inline --hot",
+    "build:debug": "NODE_ENV=debug webpack --mode development --config build/webpack.dist.js",
+    "build:release": "NODE_ENV=production webpack --mode production --config build/webpack.dist.js",
+    "build:docs": "webpack --mode production --config build/webpack.docs.js",
+    "build": "npm run build:debug && npm run build:release && npm run build:docs",
+    "clean": "rimraf ./dist ./docs/docs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/officert/vue-calendly.git"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "panels",
+    "stackable",
+    "components",
+    "ui"
+  ],
+  "author": "Tim Officer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/officert/vue-calendly/issues"
+  },
+  "homepage": "https://officert.github.io/vue-calendly",
+  "dependencies": {},
+  "peerDependencies": {
+    "vue": "^2.5.22"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/runtime": "^7.2.0",
+    "autoprefixer": "^9.4.5",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "chai": "^4.2.0",
+    "css-loader": "^2.1.0",
+    "eslint": "^5.12.1",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^5.1.0",
+    "extract-loader": "^3.1.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "mocha": "^5.2.0",
+    "rimraf": "^2.6.3",
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.2.1",
+    "vue": "^2.5.22",
+    "vue-loader": "^15.5.1",
+    "vue-router": "^3.0.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.22",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "^4.2.1",
+    "yargs": "^12.0.5"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
