@@ -5,12 +5,13 @@ only the createInlineWidgets() function is taken and modified to work on a passe
 a CSS class in the DOM
 */
 class Calendly {
-  constructor(el) {
+  constructor(el, options = {}) {
     this.el = el;
     this.embedType = 'Inline';
 
-
     this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    this.onIframeLoaded = options.onLoad || (() => {});
   }
 
   build() {
@@ -19,6 +20,10 @@ class Calendly {
     this.node.width = '100%';
     this.node.height = '100%';
     this.node.frameBorder = '0';
+
+    this.node.onload = (e) => {
+      this.onIframeLoaded(e);
+    };
 
     return this.node;
   }
@@ -105,8 +110,8 @@ class Calendly {
 }
 
 export default {
-  widget(el) {
-    const calendly = new Calendly(el);
+  widget(el, options = {}) {
+    const calendly = new Calendly(el, options);
 
     calendly.build();
 

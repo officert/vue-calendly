@@ -25,7 +25,13 @@ export default {
   computed: {},
   methods: {},
   mounted() {
-    calendly.widget(this.$el);
+    const vm = this;
+
+    calendly.widget(this.$el, {
+      onLoad(e) {
+        vm.$emit('load', e);
+      }
+    });
   }
 };
 </script>
