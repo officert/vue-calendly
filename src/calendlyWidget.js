@@ -37,9 +37,15 @@ class Calendly {
   }
 
   getSource() {
-    let t;
+    let source;
 
-    return t = '' + this.getUrl() + this.getDivider() + this.getParams(), this.filterConsentParam(t);
+    let params = this.getParams();
+
+    let url = '' + this.getUrl() + this.getDivider() + params;
+
+    let src = this.filterConsentParam(url);
+
+    return src;
   }
 
   getUrl() {
@@ -57,17 +63,19 @@ class Calendly {
     return e;
   }
 
-  getUrlParams(t) {
-    var e, n, o, i, r, l, a, d, s, u;
-    for (a = document.createElement("a"), a.href = t, r = a.search.substr(1), l = {}, d = r.split("&"), e = 0, o = d.length; o > e; e++) i = d[e], s = i.split("="), n = s[0], u = s[1], void 0 !== u && (l[n.toLowerCase()] = u);
-    return l
+  getUrlParams(search = '') {
+    search = search.split('?')[1];
+
+    if (!search) return {};
+
+    return JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
   }
 
-  getUtmUrlParams(e) {
-    var n, o, i, r, l;
-    r = ["utm_campaign", "utm_source", "utm_medium", "utm_content", "utm_term"], o = {}, i = this.getUrlParams(e);
-    for (n in i) l = i[n], t.call(r, n) >= 0 && (o[n] = l);
-    return o;
+  getUtmUrlParams(url) {
+    let utmParams = ["utm_campaign", "utm_source", "utm_medium", "utm_content", "utm_term"];
+    let params = this.getUrlParams(url);
+
+    return params;
   }
 
   getHostUtmParams() {
@@ -75,7 +83,9 @@ class Calendly {
   }
 
   getBookingUtmParams() {
-    return this.getUtmUrlParams(this.getUrl());
+    let url = this.getUrl();
+
+    return this.getUtmUrlParams(url);
   }
 
   getDomain() {
